@@ -133,8 +133,8 @@ public class FindActivity extends AppCompatActivity {
             mTenSanPham = intent.getStringExtra(EXTRA_TEN_SAN_PHAM_TIM_KIEM);
             String BarTitle;
             assert mTenSanPham != null;
-            if (mTenSanPham.length() > 9) {
-                BarTitle = mTenSanPham.substring(0, 10) + "...";
+            if (mTenSanPham.length() > 8) {
+                BarTitle = mTenSanPham.substring(0, 9) + "...";
             } else {
                 BarTitle = mTenSanPham;
             }
