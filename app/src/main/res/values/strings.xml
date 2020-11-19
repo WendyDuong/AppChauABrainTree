@@ -22,7 +22,7 @@
     <string name="giao_hang">Giao hàng</string>
     <string name="chinh_sach_doi_tra">Đặt hàng theo yêu cầu</string>
     <string name="lien_he">Thông tin liên hệ</string>
-    <string name="thong_tin_thanh_toan">Quý khách tiến hàng gửi email đặt hàng đến địa chỉ: cskh.shoppingsquare@gmail.com
+    <string name="thong_tin_thanh_toan">Quý khách tiến hàng gửi email đặt hàng đến địa chỉ: \ncskh.shoppingsquare@gmail.com
 \nShopping Square sẽ liên lạc với quý khách để hoàn tất quá trình đặt hàng.
 \n\nĐể thanh toán quý khách vui lòng chuyển khoản tới:
 \n\nSố Tài Khoản: 0541000321788
@@ -30,8 +30,8 @@
 \nChi Nhánh: Vietcombank Long Biên
 
 \n\nKhi chuyển khoản quý khách vui lòng ghi thêm thông tin vào phần nội dung chuyển tiền của ngân hàng như sau:
-\n\nTên người gửi- Số điện thoại hoặc email.
-\nVD: Dương Minh Hiếu– minhhieu@gmail.com/0968686868
+\n\nTên người gửi-Số điện thoại hoặc email.
+\nVD: Dương Minh Hiếu–minhhieu@gmail.com/0968686868
 \nSau khi nhận được tiền, công ty sẽ tiến hành đặt hàng cho quý khách.
 
 </string>
@@ -42,8 +42,41 @@
 </string>
 
     <string name="dat_hang_ho">Để đáp ứng mong muốn của quý khách, Shopping Square hỗ trợ đặt hàng theo yêu cầu!
-\n\nQuy trình: GỬI LINK (Kèm size, màu, số lượng) => NHẬN BÁO GIÁ => CHỐT ĐƠN HÀNG => ĐẶT CỌC 100% TIỀN HÀNG VÀ PHÍ DỊCH VỤ => NHẬN HÓA ĐƠN QUA EMAIL => CHỜ HÀNG VỀ => NHẬN HÀNG VÀ THANH TOÁN SHIP ĐỨC - VIỆT.
-        \n\nLIÊN HỆ ĐỂ NHẬN BÁO GIÁ: cskh.shoppingsquare@gmail.com
+\n\nCÁCH THỨC ĐẶT HÀNG:
+
+\n\n1. Quý khác gửi link hoặc ảnh sản phẩm kèm theo số điện thoại tới email: cskh.shoppingsquare@gmail.com
+\n2. Bên Shopping Square sẽ liên lạc lại với quý khách để báo giá và chốt đơn hàng
+\n3. Quý khách thanh toán tiền hàng và phí dịch vụ, vận chuyển
+\n4. Shopping Square tiến hành đặt hàng và gửi hóa đơn qua email cho quý khách
+\n5. Quý khách nhận được hàng sau 2-3 tuần, quý khách vui lòng kiểm tra lại sản phẩm và ký xác nhận đã nhận hàng.
+
+\n\nCÁCH TÍNH GIÁ:
+
+\n\nGiá sản phẩm = ( Giá Đức + Chi phí vận chuyển ( Vận chuyển nội địa bên Đức và vận chuyển từ Đức về Việt Nam) + 6% phí dịch vụ ) x 28.500
+
+
+\n\nPhí dịch vụ tối thiểu: 2 Euro cho đơn hàng dưới 20 Euro
+
+\nTỷ giá áp dụng: 28.500 vnd
+        \n\PHÍ VẬN CHUYỂN TỪ ĐỨC VỀ VIỆT NAM (HÀ NỘI)
+
+\n\n- Quần áo, giầy dép, túi xách, mặt hàng thông thường có phí là 10eu/kg
+
+\n- Mỹ phẩm, dược phẩm có phí là 10eu/kg
+
+\n- Nước hoa, xì gà, rượu có phí là 13eu/kg
+
+\n- Đồng hồ, kính, nữ trang, bật lửa zippo có phí là 5eu/cái (nếu giá > 20eu) và 2eu/cái (nếu giá thấp hơn 20eu)
+
+\n- Đồ điện tử, quần áo, túi xách hàng hiệu, điện thoại, Ipad… Phụ thu hải quan từ 10% -25%, liên hệ để báo giá chi tiết
+
+\n- Các mặt hàng trọng lượng nhỏ hơn 0.1kg (1 lạng) có phí là 1eu/món
+
+
+\n\nVí dụ 1 cái áo khoác có giá Đức 50 Euro nặng 0,5kg sẽ có giá khi về Việt Nam = (50eu + 3eu (6% phí dịch vụ) + 5Euro (Phí vận chuyển từ Đức về Việt Nam) ) x 28.500   = 1653000 VNĐ
+
+\n(Áo khoác nặng 0.5kg nên phí vận chuyển từ Đức về Việt Nam = 0.5 x 10 Euro = 5 Euro)
+
 </string>
     <string name="thong_tin_lien_he">Mọi thắc mắc xin vui lòng liên hệ:
     \n\nEmail: cskh.shoppingsquare@gmail.com
@@ -60,8 +93,6 @@
     <string name="mo_ta_san_pham">Mô tả sản phẩm</string>
 
     <!-- Subtitle text for the empty view that prompts the user to add a pet [CHAR LIMIT=50] -->
-    <string name="dummy_content">DUMMY\nCONTENT</string>
-
     <string name="them_vao_gio_hang">Thêm vào giỏ hàng</string>
     
 
