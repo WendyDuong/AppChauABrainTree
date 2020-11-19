@@ -44,6 +44,8 @@ public class TimKiemActivity extends AppCompatActivity implements SearchView.OnQ
 
         MenuItem itSearch = menu.findItem(R.id.itSearch);
         SearchView searchView = (SearchView) itSearch.getActionView();
+        searchView.setMaxWidth(Integer.MAX_VALUE);
+        searchView.setQueryHint("Nhập sản phẩm cần tìm...");
         searchView.setIconified(false);
         searchView.setOnQueryTextListener(this);
         searchView.setOnQueryTextListener(this);

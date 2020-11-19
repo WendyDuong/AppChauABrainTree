@@ -2,7 +2,6 @@ package com.example.android.demoapp.activity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.TextView;
 import androidx.appcompat.widget.Toolbar;
 
@@ -17,7 +16,7 @@ public class GiaoHang extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_giao_hang);
-        Toolbar toolbar = findViewById(R.id.toolbar_tim_do);
+        Toolbar toolbar = findViewById(R.id.toolbar_giao_hang);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Hình thức giao hàng");
 

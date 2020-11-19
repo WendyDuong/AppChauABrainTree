@@ -7,10 +7,9 @@
     tools:context=".activity.FindActivity">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_tim_do"
+            android:id="@+id/toolbar_thanh_toan"
             android:layout_width="match_parent"
             app:titleTextAppearance="@style/TextAppearance.AppCompat.Large"
-            app:titleMarginStart="40dp"
             app:titleTextColor="#FFFFFF"
             android:layout_height="@dimen/action_barsize"
             android:background="@drawable/gradient_toolbar"
@@ -25,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="?attr/actionBarSize"
             android:background="@android:color/transparent"
-            app:layout_constraintEnd_toEndOf="@id/toolbar_tim_do"
+            app:layout_constraintEnd_toEndOf="@id/toolbar_thanh_toan"
             app:layout_constraintTop_toTopOf="parent"
             app:tabIndicator="@null"
             app:tabMode="fixed" />
@@ -40,7 +39,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar_tim_do"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_thanh_toan"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView

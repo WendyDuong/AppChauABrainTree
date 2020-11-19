@@ -3,7 +3,6 @@ package com.example.android.demoapp.activity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -18,7 +17,7 @@ public class LienHe extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lien_he);
 
-        Toolbar toolbar = findViewById(R.id.toolbar_tim_do);
+        Toolbar toolbar = findViewById(R.id.toolbar_lien_he);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Thông tin liên hệ");
 

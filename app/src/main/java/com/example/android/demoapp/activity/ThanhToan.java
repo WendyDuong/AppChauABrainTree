@@ -2,7 +2,6 @@ package com.example.android.demoapp.activity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -16,7 +15,7 @@ public class ThanhToan extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thanh_toan);
-        Toolbar toolbar = findViewById(R.id.toolbar_tim_do);
+        Toolbar toolbar = findViewById(R.id.toolbar_thanh_toan);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Hình thức thanh toán");
         toolbar.setNavigationIcon(R.drawable.ic_back);

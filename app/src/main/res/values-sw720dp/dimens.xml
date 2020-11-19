@@ -8,7 +8,7 @@
     <dimen name="tilte_size">26sp</dimen>
     <dimen name="description">20sp</dimen>
 
-    <dimen name="action_barsize">84dp</dimen>
+    <dimen name="action_barsize">64dp</dimen>
 
 
 </resources>

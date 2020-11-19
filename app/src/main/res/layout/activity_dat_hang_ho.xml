@@ -12,10 +12,11 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_tim_do"
+        app:buttonGravity="center_vertical"
+        app:contentInsetStartWithNavigation="0dp"
+        android:id="@+id/toolbar_dat_hang_ho"
         android:layout_width="match_parent"
         app:titleTextAppearance="@style/TextAppearance.AppCompat.Large"
-        app:titleMarginStart="40dp"
         app:titleTextColor="#FFFFFF"
         android:layout_height="@dimen/action_barsize"
         android:background="@drawable/gradient_toolbar"

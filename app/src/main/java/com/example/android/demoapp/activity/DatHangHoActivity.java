@@ -1,15 +1,11 @@
 package com.example.android.demoapp.activity;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -62,7 +58,7 @@ public class DatHangHoActivity extends AppCompatActivity {
         recyclerDatHangHo.setLayoutManager(new GridLayoutManager(DatHangHoActivity.this,3));
         recyclerDatHangHo.setAdapter(datHangHoAdapter);
 
-        Toolbar toolbar = findViewById(R.id.toolbar_tim_do);
+        Toolbar toolbar = findViewById(R.id.toolbar_dat_hang_ho);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setTitle("Đặt hàng theo yêu cầu");

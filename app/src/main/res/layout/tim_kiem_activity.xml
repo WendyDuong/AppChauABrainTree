@@ -5,17 +5,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_tim_kiem"
         android:layout_width="match_parent"
-        app:title="Tìm Kiếm"
-        app:titleTextAppearance="@style/TextAppearance.AppCompat.Large"
-        app:titleMarginStart="40dp"
-        app:titleTextColor="#FFFFFF"
         android:layout_height="@dimen/action_barsize"
         android:background="@drawable/gradient_toolbar"
+        app:buttonGravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp"/>
+        app:title="Tìm Kiếm"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Large"
+        app:titleTextColor="#FFFFFF" />
 
 
 

@@ -9,6 +9,9 @@
     android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
+        app:contentInsetStartWithNavigation="0dp"
+        app:buttonGravity="center_vertical"
+
         android:id="@+id/toolbar_yeu_thich_activity"
         android:layout_width="match_parent"
         android:layout_height="@dimen/action_barsize"
@@ -17,7 +20,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:title="Yêu Thích"
-        app:titleMarginStart="40dp"
         app:titleTextAppearance="@style/TextAppearance.AppCompat.Large"
         app:titleTextColor="#FFFFFF" />
 

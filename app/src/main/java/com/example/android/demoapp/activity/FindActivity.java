@@ -3,9 +3,7 @@ package com.example.android.demoapp.activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -55,7 +53,7 @@ public class FindActivity extends AppCompatActivity {
 
 
         emptyTv = findViewById(R.id.find_empty_tv);
-        toolbar = findViewById(R.id.toolbar_tim_do);
+        toolbar = findViewById(R.id.toolbar_thanh_toan);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_back);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -135,8 +133,8 @@ public class FindActivity extends AppCompatActivity {
             mTenSanPham = intent.getStringExtra(EXTRA_TEN_SAN_PHAM_TIM_KIEM);
             String BarTitle;
             assert mTenSanPham != null;
-            if (mTenSanPham.length() > 4) {
-                BarTitle = mTenSanPham.substring(0, 5) + "...";
+            if (mTenSanPham.length() > 9) {
+                BarTitle = mTenSanPham.substring(0, 10) + "...";
             } else {
                 BarTitle = mTenSanPham;
             }

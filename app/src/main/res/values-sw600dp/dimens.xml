@@ -7,6 +7,6 @@
     <dimen name="textsize">18sp</dimen>
     <dimen name="tilte_size">28sp</dimen>
     <dimen name="description">18sp</dimen>
-    <dimen name="action_barsize">72dp</dimen>
+    <dimen name="action_barsize">64dp</dimen>
 
 </resources>
