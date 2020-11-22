@@ -120,10 +120,10 @@ public class DetailActivity extends AppCompatActivity {
                     imageViewHangSp.setImageResource(R.drawable.logo_dm);
                     break;
                 case 4:
-                    imageViewHangSp.setImageResource(R.drawable.logo_saturn);
+                    imageViewHangSp.setImageResource(R.drawable.apotheke_logo);
                     break;
                 case 5:
-                    imageViewHangSp.setImageResource(R.drawable.apotheke_logo);
+                    imageViewHangSp.setImageResource(R.drawable.logo_saturn);
                     break;
                 case 6:
                     imageViewHangSp.setImageResource(R.drawable.rossmann_logo);
@@ -475,10 +475,10 @@ public class DetailActivity extends AppCompatActivity {
                     imageViewHangSp.setImageResource(R.drawable.logo_dm);
                     break;
                 case 4:
-                    imageViewHangSp.setImageResource(R.drawable.logo_saturn);
+                    imageViewHangSp.setImageResource(R.drawable.apotheke_logo);
                     break;
                 case 5:
-                    imageViewHangSp.setImageResource(R.drawable.apotheke_logo);
+                    imageViewHangSp.setImageResource(R.drawable.logo_saturn);
                     break;
                 case 6:
                     imageViewHangSp.setImageResource(R.drawable.rossmann_logo);

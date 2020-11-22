@@ -139,10 +139,10 @@ public class CatalogActivity extends AppCompatActivity {
                 imageViewNhaCungCap.setImageResource(R.drawable.logo_dm);
                 break;
             case 4:
-                imageViewNhaCungCap.setImageResource(R.drawable.logo_saturn);
+                imageViewNhaCungCap.setImageResource(R.drawable.apotheke_logo);
                 break;
             case 5:
-                imageViewNhaCungCap.setImageResource(R.drawable.apotheke_logo);
+                imageViewNhaCungCap.setImageResource(R.drawable.logo_saturn);
                 break;
             case 6:
                 imageViewNhaCungCap.setImageResource(R.drawable.rossmann_logo);
@@ -255,10 +255,10 @@ public class CatalogActivity extends AppCompatActivity {
                         imageViewNhaCungCap.setImageResource(R.drawable.logo_dm);
                         break;
                     case 4:
-                        imageViewNhaCungCap.setImageResource(R.drawable.logo_saturn);
+                        imageViewNhaCungCap.setImageResource(R.drawable.apotheke_logo);
                         break;
                     case 5:
-                        imageViewNhaCungCap.setImageResource(R.drawable.apotheke_logo);
+                        imageViewNhaCungCap.setImageResource(R.drawable.logo_saturn);
                         break;
                     case 6:
                         imageViewNhaCungCap.setImageResource(R.drawable.rossmann_logo);
