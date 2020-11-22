@@ -364,12 +364,8 @@ public class DetailActivity extends AppCompatActivity {
                                     }
                                 });
 
-                                Toast.makeText(DetailActivity.this, "Đã đủ 50 "+ tensp + " trong giỏ hàng", Toast.LENGTH_SHORT).show();
 
-                            } else {
-                                Toast.makeText(DetailActivity.this, "Đã thêm " + soluongmoi + " " + tensp + " vào giỏ hàng", Toast.LENGTH_SHORT).show();
                             }
-
 
                             exsist = true;
 

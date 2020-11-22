@@ -154,7 +154,6 @@ public class YeuthichAdapter extends RecyclerView.Adapter<YeuthichAdapter.viewHo
                         boolean exit = false;
                         for (int i = 0; i < mgioHangEntries.size(); i++) {
                             if (mgioHangEntries.get(i).getIdSanPham() == idsanphamhientai) {
-                                Toast.makeText(mcontext, tensanpham + " đã có trong giỏ hàng", Toast.LENGTH_SHORT).show();
                                 exit = true;
                             }
                         }
@@ -166,7 +165,6 @@ public class YeuthichAdapter extends RecyclerView.Adapter<YeuthichAdapter.viewHo
 
                                 }
                             });
-                            Toast.makeText(mcontext, "Đã thêm " + tensanpham + " vào giỏ hàng", Toast.LENGTH_SHORT).show();
                         }
                     } else {
                         AppExecutors.getInstance().diskIO().execute(new Runnable() {
@@ -175,10 +173,7 @@ public class YeuthichAdapter extends RecyclerView.Adapter<YeuthichAdapter.viewHo
                                 mDb.gioHangDao().insertGioHang(new GioHangEntry(idsanphamhientai, tensanpham, Precision.round(giasanpham / 1000, 0) * 1000, hinhanhsanpham, khoiluongsanpham, 1, idHang));
                             }
                         });
-                        Toast.makeText(mcontext, "Đã thêm " + tensanpham + " vào giỏ hàng", Toast.LENGTH_SHORT).show();
                     }
-
-
                 }
             });
 

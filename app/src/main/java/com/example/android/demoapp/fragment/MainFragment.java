@@ -29,8 +29,8 @@ public class MainFragment extends Fragment {
         add(R.drawable.logo_silit);
         add(R.drawable.muller);
         add(R.drawable.logo_dm);
-        add(R.drawable.logo_saturn);
         add(R.drawable.apotheke_logo);
+        add(R.drawable.logo_saturn);
         add(R.drawable.rossmann_logo);
         add(R.drawable.worldofsweet);
         add(R.drawable.mediamarkt_logo);
