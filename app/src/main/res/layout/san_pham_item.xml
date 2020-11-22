@@ -20,7 +20,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="160dp"
         android:layout_height="260dp"
-        android:layout_margin="4dp"
         android:background="@android:color/transparent">
 
         <ImageView
