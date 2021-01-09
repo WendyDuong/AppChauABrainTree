@@ -30,6 +30,7 @@ import com.example.android.demoapp.database.AppDatabase;
 import com.example.android.demoapp.database.GioHangEntry;
 import com.example.android.demoapp.database.SanPhamEntry;
 import com.example.android.demoapp.database.YeuThichEntry;
+import com.example.android.demoapp.fragment.MainFragment;
 import com.github.chrisbanes.photoview.PhotoView;
 
 import com.google.android.material.badge.BadgeDrawable;
@@ -106,35 +107,21 @@ public class DetailActivity extends AppCompatActivity {
 
         if (intent != null && intent.hasExtra(EXTRA_HANG_ID)) {
             idHang = intent.getIntExtra(EXTRA_HANG_ID, DEFAULT_ID);
-            switch (idHang) {
+            switch (idHang){
                 case 0:
-                    imageViewHangSp.setImageResource(R.drawable.logo_wmf);
+                    imageViewHangSp.setImageResource(MainFragment.ImageList.get(0));
                     break;
                 case 1:
-                    imageViewHangSp.setImageResource(R.drawable.logo_silit);
+                    imageViewHangSp.setImageResource(MainFragment.ImageList.get(1));
                     break;
                 case 2:
-                    imageViewHangSp.setImageResource(R.drawable.muller);
+                    imageViewHangSp.setImageResource(MainFragment.ImageList.get(2));
                     break;
                 case 3:
-                    imageViewHangSp.setImageResource(R.drawable.logo_dm);
-                    break;
-                case 4:
-                    imageViewHangSp.setImageResource(R.drawable.apotheke_logo);
-                    break;
-                case 5:
-                    imageViewHangSp.setImageResource(R.drawable.logo_saturn);
-                    break;
-                case 6:
-                    imageViewHangSp.setImageResource(R.drawable.rossmann_logo);
-                    break;
-                case 7:
-                    imageViewHangSp.setImageResource(R.drawable.worldofsweet);
-                    break;
-                case 8:
-                    imageViewHangSp.setImageResource(R.drawable.mediamarkt_logo);
+                    imageViewHangSp.setImageResource(MainFragment.ImageList.get(3));
                     break;
             }
+
         }
         imageViewHangSp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -299,15 +286,13 @@ public class DetailActivity extends AppCompatActivity {
 
         //Rounding currency to make a easy reading
         giasp = sanPham.getGiaSanPham();
-        giasp = Precision.round(giasp/1000, 0)*1000;
 
         tvTen.setText(tensp);
         tvMoTa.setText(sanPham.getMoTa());
         tvKhoiluong.setText("Chi tiết: " + khoiluongsp);
         tvThuongHieu.setText("Thương hiệu: " + thuongHieu);
         tvXuatXu.setText("Xuất xứ: " + xuatXu);
-        DecimalFormat deci = new DecimalFormat("###,###,###");
-        tvGia.setText(deci.format(giasp) + " Đ");
+        tvGia.setText("€"+ giasp);
         imgChiTiet.setImageResource(hinhanhsp);
 
         viewModel.getYeuThich().observe(this, new Observer<List<YeuThichEntry>>() {
@@ -345,7 +330,7 @@ public class DetailActivity extends AppCompatActivity {
                             AppExecutors.getInstance().diskIO().execute(new Runnable() {
                                 @Override
                                 public void run() {
-                                    mDb.gioHangDao().updateGioHang(new GioHangEntry(id, idsanpham, tensp, Precision.round((giasp * soluongmoi)/1000,0)*1000, hinhanhsp, khoiluongsp, soluongmoi, idHang));
+                                    mDb.gioHangDao().updateGioHang(new GioHangEntry(id, idsanpham, tensp, giasp * soluongmoi, hinhanhsp, khoiluongsp, soluongmoi, idHang));
 
 
                                 }
@@ -358,7 +343,7 @@ public class DetailActivity extends AppCompatActivity {
                                 AppExecutors.getInstance().diskIO().execute(new Runnable() {
                                     @Override
                                     public void run() {
-                                        mDb.gioHangDao().updateGioHang(new GioHangEntry(id, idsanpham, tensp, Precision.round((giasp * 20)/1000,0)*1000, hinhanhsp, khoiluongsp, 50, idHang));
+                                        mDb.gioHangDao().updateGioHang(new GioHangEntry(id, idsanpham, tensp, giasp * 50, hinhanhsp, khoiluongsp, 50, idHang));
 
 
                                     }
@@ -383,7 +368,7 @@ public class DetailActivity extends AppCompatActivity {
                         AppExecutors.getInstance().diskIO().execute(new Runnable() {
                             @Override
                             public void run() {
-                                mDb.gioHangDao().insertGioHang(new GioHangEntry(idsanpham, tensp,Precision.round((giamoi)/1000,0)*1000 , hinhanhsp, khoiluongsp, soluong, idHang));
+                                mDb.gioHangDao().insertGioHang(new GioHangEntry(idsanpham, tensp,giamoi , hinhanhsp, khoiluongsp, soluong, idHang));
 
 
                             }
@@ -401,7 +386,7 @@ public class DetailActivity extends AppCompatActivity {
                     AppExecutors.getInstance().diskIO().execute(new Runnable() {
                         @Override
                         public void run() {
-                            mDb.gioHangDao().insertGioHang(new GioHangEntry(idsanpham, tensp,Precision.round((giamoi)/1000,0)*1000 , hinhanhsp, khoiluongsp, soluong, idHang));
+                            mDb.gioHangDao().insertGioHang(new GioHangEntry(idsanpham, tensp,giamoi , hinhanhsp, khoiluongsp, soluong, idHang));
 
 
                         }
@@ -465,33 +450,18 @@ public class DetailActivity extends AppCompatActivity {
         intent = getIntent();
         if (intent != null && intent.hasExtra(EXTRA_HANG_ID)) {
             idHang = intent.getIntExtra(EXTRA_HANG_ID, DEFAULT_ID);
-            switch (idHang) {
+            switch (idHang){
                 case 0:
-                    imageViewHangSp.setImageResource(R.drawable.logo_wmf);
+                    imageViewHangSp.setImageResource(MainFragment.ImageList.get(0));
                     break;
                 case 1:
-                    imageViewHangSp.setImageResource(R.drawable.logo_silit);
+                    imageViewHangSp.setImageResource(MainFragment.ImageList.get(1));
                     break;
                 case 2:
-                    imageViewHangSp.setImageResource(R.drawable.muller);
+                    imageViewHangSp.setImageResource(MainFragment.ImageList.get(2));
                     break;
                 case 3:
-                    imageViewHangSp.setImageResource(R.drawable.logo_dm);
-                    break;
-                case 4:
-                    imageViewHangSp.setImageResource(R.drawable.apotheke_logo);
-                    break;
-                case 5:
-                    imageViewHangSp.setImageResource(R.drawable.logo_saturn);
-                    break;
-                case 6:
-                    imageViewHangSp.setImageResource(R.drawable.rossmann_logo);
-                    break;
-                case 7:
-                    imageViewHangSp.setImageResource(R.drawable.worldofsweet);
-                    break;
-                case 8:
-                    imageViewHangSp.setImageResource(R.drawable.mediamarkt_logo);
+                    imageViewHangSp.setImageResource(MainFragment.ImageList.get(3));
                     break;
             }
         }

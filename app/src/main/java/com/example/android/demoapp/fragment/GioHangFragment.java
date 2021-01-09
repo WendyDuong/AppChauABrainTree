@@ -95,7 +95,7 @@ public class GioHangFragment extends Fragment {
                     }
 
                     DecimalFormat decimalFormat1 = new DecimalFormat("###,###,###");
-                    tvTongtien.setText("Tổng số tiền: " + decimalFormat1.format(tongTienDonHang) + " Đ");
+                    tvTongtien.setText("Tổng số tiền: €" +tongTienDonHang);
                     tongTienDonHang = 0;
                 }
                 gioHangAdapter.setGioHangs(gioHangEntries);

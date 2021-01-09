@@ -20,6 +20,7 @@ import com.example.android.demoapp.database.AppDatabase;
 import com.example.android.demoapp.database.GioHangEntry;
 import com.example.android.demoapp.database.SanPhamEntry;
 import com.example.android.demoapp.database.YeuThichEntry;
+import com.example.android.demoapp.fragment.MainFragment;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.tabs.TabLayout;
 
@@ -127,31 +128,16 @@ public class CatalogActivity extends AppCompatActivity {
 
         switch (mIdHang){
             case 0:
-                imageViewNhaCungCap.setImageResource(R.drawable.logo_wmf);
+                imageViewNhaCungCap.setImageResource(MainFragment.ImageList.get(0));
                 break;
             case 1:
-                imageViewNhaCungCap.setImageResource(R.drawable.logo_silit);
+                imageViewNhaCungCap.setImageResource(MainFragment.ImageList.get(1));
                 break;
             case 2:
-                imageViewNhaCungCap.setImageResource(R.drawable.muller);
+                imageViewNhaCungCap.setImageResource(MainFragment.ImageList.get(2));
                 break;
             case 3:
-                imageViewNhaCungCap.setImageResource(R.drawable.logo_dm);
-                break;
-            case 4:
-                imageViewNhaCungCap.setImageResource(R.drawable.apotheke_logo);
-                break;
-            case 5:
-                imageViewNhaCungCap.setImageResource(R.drawable.logo_saturn);
-                break;
-            case 6:
-                imageViewNhaCungCap.setImageResource(R.drawable.rossmann_logo);
-                break;
-            case 7:
-                imageViewNhaCungCap.setImageResource(R.drawable.worldofsweet);
-                break;
-            case 8:
-                imageViewNhaCungCap.setImageResource(R.drawable.mediamarkt_logo);
+                imageViewNhaCungCap.setImageResource(MainFragment.ImageList.get(3));
                 break;
         }
 
@@ -243,33 +229,19 @@ public class CatalogActivity extends AppCompatActivity {
                 mIdHang = intent.getIntExtra(EXTRA_HANG_ID, DEFAULT_HANG_ID);
                 switch (mIdHang){
                     case 0:
-                        imageViewNhaCungCap.setImageResource(R.drawable.logo_wmf);
+                        imageViewNhaCungCap.setImageResource(MainFragment.ImageList.get(0));
                         break;
                     case 1:
-                        imageViewNhaCungCap.setImageResource(R.drawable.logo_silit);
+                        imageViewNhaCungCap.setImageResource(MainFragment.ImageList.get(1));
                         break;
                     case 2:
-                        imageViewNhaCungCap.setImageResource(R.drawable.muller);
+                        imageViewNhaCungCap.setImageResource(MainFragment.ImageList.get(2));
                         break;
                     case 3:
-                        imageViewNhaCungCap.setImageResource(R.drawable.logo_dm);
-                        break;
-                    case 4:
-                        imageViewNhaCungCap.setImageResource(R.drawable.apotheke_logo);
-                        break;
-                    case 5:
-                        imageViewNhaCungCap.setImageResource(R.drawable.logo_saturn);
-                        break;
-                    case 6:
-                        imageViewNhaCungCap.setImageResource(R.drawable.rossmann_logo);
-                        break;
-                    case 7:
-                        imageViewNhaCungCap.setImageResource(R.drawable.worldofsweet);
-                        break;
-                    case 8:
-                        imageViewNhaCungCap.setImageResource(R.drawable.mediamarkt_logo);
+                        imageViewNhaCungCap.setImageResource(MainFragment.ImageList.get(3));
                         break;
                 }
+
 
                 factory1 = new SanPhamViewModelFactory(mDb, mIdHang);
                 final SanPhamViewModel viewModel1

@@ -42,7 +42,32 @@ public class MainAdapter extends  RecyclerView.Adapter<MainAdapter.viewHolderMai
     @Override
     public void onBindViewHolder(@NonNull final MainAdapter.viewHolderMain holder, int position) {
         holder.imageView.setImageResource(mImageIds.get(position));
+
         final FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) holder.cardView.getLayoutParams();
+        int left = dptoPx(24);
+        int top = dptoPx(12);
+        int right = dptoPx(24);
+        int bottom = dptoPx(12);
+        boolean isFirst2Iteme = position < 2;
+        boolean isLast2tems = position > getItemCount() - 2;
+        if (isFirst2Iteme) {
+            top = dptoPx(24);
+        }
+        if (isLast2tems) {
+            bottom = dptoPx(24);
+        }
+
+        boolean isLeftSide = (position + 1) % 2 != 0;
+        boolean isRightSide = !isLeftSide;
+
+        if (isLeftSide) {
+            right = dptoPx(12);
+        }
+        if (isRightSide) {
+            left = dptoPx(12);
+        }
+
+/*        final FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) holder.cardView.getLayoutParams();
         int left = dptoPx(24);
         int top = dptoPx(12);
         int right = dptoPx(24);
@@ -73,7 +98,7 @@ public class MainAdapter extends  RecyclerView.Adapter<MainAdapter.viewHolderMai
         {
             right = dptoPx(12);
             left = dptoPx(12);
-        }
+        }*/
         layoutParams.setMargins(left,top,right,bottom);
         holder.cardView.setLayoutParams(layoutParams);
     }

@@ -19,68 +19,18 @@
     <string name="thong_tin_ca_nhan">Thông tin cá nhân</string>
     <string name="hinh_thuc_thanh_toan">Hình Thức Thanh Toán</string>
     <string name="cac_don_hang">Các Đơn Hàng</string>
-    <string name="giao_hang">Giao hàng</string>
-    <string name="chinh_sach_doi_tra">Đặt hàng theo yêu cầu</string>
+    <string name="van_chuyen">Vận chuyển</string>
     <string name="lien_he">Thông tin liên hệ</string>
-    <string name="thong_tin_thanh_toan">Quý khách tiến hàng gửi email đặt hàng đến địa chỉ: \ncskh.shoppingsquare@gmail.com
-\nShopping Square sẽ liên lạc với quý khách để hoàn tất quá trình đặt hàng.
-\n\nĐể thanh toán quý khách vui lòng chuyển khoản tới:
-\n\nSố Tài Khoản: 0541000321788
-\nTên Tài Khoản: Dương Thị Ngát
-\nChi Nhánh: Vietcombank Long Biên
-
-\n\nKhi chuyển khoản quý khách vui lòng ghi thêm thông tin vào phần nội dung chuyển tiền của ngân hàng như sau:
-\n\nTên người gửi-Số điện thoại hoặc email.
-\nVD: Dương Minh Hiếu–minhhieu@gmail.com/0968686868
-\nSau khi nhận được tiền, công ty sẽ tiến hành đặt hàng cho quý khách.
+    <string name="thong_tin_thanh_toan">
 
 </string>
-    <string name="thong_tin_giao_hang">Hàng sẽ được giao trung bình từ 2-3 tuần (Các dịp cao điểm sale của Đức, dịp tết Việt Nam hay mưa bão có thể sẽ hơn một chút).
-        \n\nSau khi hàng về đến Việt Nam, đại lý phân phối ở Việt Nam sẽ liên hệ trực tiếp để giao hàng cho quý khách.
-\n\nQuý khách vui lòng kiểm tra kỹ số lượng, xem lại sản phẩm khi nhận hàng tại đại lý phân phối. Nếu có gì sai sót báo ngay cho đại lý phân phối hoặc liên hệ email: cskh.shoppingsquare@gmail.com.
-        \nShopping Square sẽ giải quyết trong thời gian nhanh nhất có thể.
-</string>
-
-    <string name="dat_hang_ho">Để đáp ứng mong muốn của quý khách, Shopping Square hỗ trợ đặt hàng theo yêu cầu!
-\n\nCÁCH THỨC ĐẶT HÀNG:
-
-\n\n1. Quý khác gửi link hoặc ảnh sản phẩm kèm theo số điện thoại tới email: cskh.shoppingsquare@gmail.com
-\n2. Bên Shopping Square sẽ liên lạc lại với quý khách để báo giá và chốt đơn hàng
-\n3. Quý khách thanh toán tiền hàng và phí dịch vụ, vận chuyển
-\n4. Shopping Square tiến hành đặt hàng và gửi hóa đơn qua email cho quý khách
-\n5. Quý khách nhận được hàng sau 2-3 tuần, quý khách vui lòng kiểm tra lại sản phẩm và ký xác nhận đã nhận hàng.
-
-\n\nCÁCH TÍNH GIÁ:
-
-\n\nGiá sản phẩm = [ Giá Đức + Chi phí vận chuyển (Vận chuyển nội địa bên Đức và vận chuyển từ Đức về Việt Nam) + 6% phí dịch vụ ] x 28.500
-
-
-\n\nPhí dịch vụ tối thiểu: 2 Euro cho đơn hàng dưới 20 Euro
-
-\nTỷ giá áp dụng: 28.500 vnd
-        \n\n\PHÍ VẬN CHUYỂN TỪ ĐỨC VỀ VIỆT NAM (HÀ NỘI)
-
-\n\n- Quần áo, giầy dép, túi xách, mặt hàng thông thường có phí là 10eu/kg
-
-\n- Mỹ phẩm, dược phẩm có phí là 10eu/kg
-
-\n- Nước hoa, xì gà, rượu có phí là 13eu/kg
-
-\n- Đồng hồ, kính, nữ trang, bật lửa zippo có phí là 5eu/cái (nếu giá > 20eu) và 2eu/cái (nếu giá thấp hơn 20eu)
-
-\n- Đồ điện tử, quần áo, túi xách hàng hiệu, điện thoại, Ipad… Phụ thu hải quan từ 10% -25%, liên hệ để báo giá chi tiết
-
-\n- Các mặt hàng trọng lượng nhỏ hơn 0.1kg ( 1 lạng) có phí là 1eu/món
-
-
-\n\nVí dụ 1 cái áo khoác có giá Đức 50 Euro nặng 0,5kg sẽ có giá khi về Việt Nam = [50eu + 3eu (6% phí dịch vụ) + 5eu (Phí vận chuyển từ Đức về Việt Nam)) x 28.500 = 1653000 VNĐ]
-
-\n(Áo khoác nặng 0.5kg nên phí vận chuyển từ Đức về Việt Nam = 0.5 x 10 Euro = 5 Euro)
-\n \nMột số nhãn hàng ưu chuộng cho quý khách tham khảo:
+    <string name="thong_tin_giao_hang">
 
 </string>
+
     <string name="thong_tin_lien_he">Mọi thắc mắc xin vui lòng liên hệ:
-    \n\nEmail: cskh.shoppingsquare@gmail.com
+    \n\nEmail: kundenservice@giaohang.eu
+        \nHotline: +4917686239999
     </string>
     <string name="dang_xuat">Đăng Xuất</string>
     <string name="dummy_button">Dummy Button</string>
@@ -95,7 +45,7 @@
 
     <!-- Subtitle text for the empty view that prompts the user to add a pet [CHAR LIMIT=50] -->
     <string name="them_vao_gio_hang">Thêm vào giỏ hàng</string>
-    
+    <string name="xacNhanThanhToan">Qúy khách đã thanh toán thành công! \nThư xác nhận đặt hàng sẽ được gửi vào email của quý khách.</string>
 
-    
+
 </resources>

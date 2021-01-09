@@ -58,9 +58,8 @@ public class DatHangAdapter extends RecyclerView.Adapter<DatHangAdapter.viewHold
 
         holder.textViewTenItem.setText(tensanpham);
         holder.textViewKhoiLuongItem.setText(khoiluongsanpham);
-        DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
-        holder.textViewGiaItem.setText(decimalFormat.format(giasanpham) + " Đ");
-        holder.textViewDonGia.setText(decimalFormat.format(giaDonViSanPham) + " Đ");
+        holder.textViewGiaItem.setText("€"+giasanpham);
+        holder.textViewDonGia.setText("€"+giasanpham);
         holder.imageViewITem.setImageResource(hinhanhsanpham);
         holder.textViewSoLuongItem.setText(soluongsanpham + "x");
         holder.itemView.setTag(idsanpham);

@@ -62,8 +62,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<String> caNhan = new ArrayList<>();
 
         caNhan.add(getString(R.string.hinh_thuc_thanh_toan));
-        caNhan.add(getString(R.string.giao_hang));
-        caNhan.add(getString(R.string.chinh_sach_doi_tra));
+        caNhan.add(getString(R.string.van_chuyen));
         caNhan.add(getString(R.string.lien_he));
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override

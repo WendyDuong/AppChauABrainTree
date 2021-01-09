@@ -56,12 +56,10 @@ public class YeuthichAdapter extends RecyclerView.Adapter<YeuthichAdapter.viewHo
         String khoiluongsanpham = yeuThichEntry.getKhoiLuong();
         int hinhanhsanpham = yeuThichEntry.getHinhAnh();
         double giasanpham = yeuThichEntry.getGiaSanPham();
-        giasanpham = Precision.round(giasanpham / 1000, 0) * 1000;
 
         holder.tvTen.setText(tensanpham);
         holder.tvKhoiluong.setText(khoiluongsanpham);
-        DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
-        holder.tvGia.setText(decimalFormat.format(giasanpham) + " Đ");
+        holder.tvGia.setText("€"+giasanpham);
         holder.imgSanPham.setImageResource(hinhanhsanpham);
 
     }
@@ -162,7 +160,7 @@ public class YeuthichAdapter extends RecyclerView.Adapter<YeuthichAdapter.viewHo
                             AppExecutors.getInstance().diskIO().execute(new Runnable() {
                                 @Override
                                 public void run() {
-                                    mDb.gioHangDao().insertGioHang(new GioHangEntry(idsanphamhientai, tensanpham, Precision.round(giasanpham / 1000, 0) * 1000, hinhanhsanpham, khoiluongsanpham, 1, idHang));
+                                    mDb.gioHangDao().insertGioHang(new GioHangEntry(idsanphamhientai, tensanpham, giasanpham , hinhanhsanpham, khoiluongsanpham, 1, idHang));
 
                                 }
                             });
@@ -172,7 +170,7 @@ public class YeuthichAdapter extends RecyclerView.Adapter<YeuthichAdapter.viewHo
                         AppExecutors.getInstance().diskIO().execute(new Runnable() {
                             @Override
                             public void run() {
-                                mDb.gioHangDao().insertGioHang(new GioHangEntry(idsanphamhientai, tensanpham, Precision.round(giasanpham / 1000, 0) * 1000, hinhanhsanpham, khoiluongsanpham, 1, idHang));
+                                mDb.gioHangDao().insertGioHang(new GioHangEntry(idsanphamhientai, tensanpham, giasanpham , hinhanhsanpham, khoiluongsanpham, 1, idHang));
                             }
                         });
                         Toast.makeText(mcontext, "Đã thêm " + tensanpham + " vào giỏ hàng", Toast.LENGTH_SHORT).show();

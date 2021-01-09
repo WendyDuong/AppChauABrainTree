@@ -1,5 +1,6 @@
 package com.example.android.demoapp.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.net.Uri;
@@ -20,13 +21,22 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.android.demoapp.AppExecutors;
+import com.example.android.demoapp.Config.Config;
 import com.example.android.demoapp.R;
 import com.example.android.demoapp.ViewModel.DatHangViewModel;
 import com.example.android.demoapp.adapter.DatHangAdapter;
 import com.example.android.demoapp.database.AppDatabase;
 import com.example.android.demoapp.database.GioHangEntry;
+import com.paypal.android.sdk.payments.PayPalConfiguration;
+import com.paypal.android.sdk.payments.PayPalPayment;
+import com.paypal.android.sdk.payments.PayPalService;
+import com.paypal.android.sdk.payments.PaymentActivity;
+import com.paypal.android.sdk.payments.PaymentConfirmation;
 
 
+import org.json.JSONException;
+
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,12 +51,32 @@ public class DatHangActivity extends AppCompatActivity {
     RecyclerView datHangRecyclerView;
     EditText editTextTen, editTextSoDt, editTextDiaChi, editTextEmail;
     Button buttonDatHang, buttonMuaTiep;
+    private static final int PAYPAL_REQUEST_CODE = 9797;
+
+    private static PayPalConfiguration config = new PayPalConfiguration()
+            .environment(PayPalConfiguration.ENVIRONMENT_SANDBOX)
+            .clientId(Config.PAYPAL_CLIENT_ID);
+
+    public static boolean isValidEmail(String email) {
+        return (!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches());
+    }
+
+    @Override
+    protected void onDestroy() {
+        stopService(new Intent(this, PayPalService.class));
+        super.onDestroy();
+    }
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dat_hang_activity);
+
+        Intent intent = new Intent(this, PayPalService.class);
+        intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, config);
+        startService(intent);
+
         mDb = AppDatabase.getInstance(this);
 
         datHangRecyclerView = findViewById(R.id.recycler_view_dat_hang);
@@ -73,14 +103,17 @@ public class DatHangActivity extends AppCompatActivity {
             @Override
             public void onChanged(@Nullable List<GioHangEntry> datHangs) {
                 mDatHangs = datHangs;
-                assert mDatHangs != null;
-                for (int i = 0; i < mDatHangs.size(); i++) {
-                    tongtien = mDatHangs.get(i).getGiaSanPham();
-                    tongTienDonHang += tongtien;
-                }
+                if(mDatHangs != null) {
 
-                DecimalFormat decimalFormat1 = new DecimalFormat("###,###,###");
-                tongTien.setText( "Tổng số tiền: " + decimalFormat1.format(tongTienDonHang) + " Đ");
+                    for (int i = 0; i < mDatHangs.size(); i++) {
+                        tongtien = mDatHangs.get(i).getGiaSanPham();
+                        tongTienDonHang += tongtien;
+                    }
+                }else
+                    tongTienDonHang = 0;
+
+                DecimalFormat formatter = new DecimalFormat("#,###,###.0");
+                tongTien.setText( "Tổng số tiền: €"+ formatter.format(tongTienDonHang) );
                 datHangAdapter.setDatHang(mDatHangs);
             }
         });
@@ -102,26 +135,29 @@ public class DatHangActivity extends AppCompatActivity {
                 final String email = editTextEmail.getText().toString().trim();
                 final String diachi = editTextDiaChi.getText().toString().trim();
 
-                if (ten.length() > 0 && sdt.length() > 0 && email.length() > 0 && diachi.length() > 0 && isValidEmail(email)) {
+                processPayment();
+
+/*
+                //if (ten.length() > 0 && sdt.length() > 0 && email.length() > 0 && diachi.length() > 0 && isValidEmail(email)) {
                     Intent intent = new Intent(Intent.ACTION_SENDTO);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     intent.setData(Uri.parse("mailto:"));
                     intent.putExtra(Intent.EXTRA_SUBJECT, "Order from " + ten);
-                    intent.putExtra(Intent.EXTRA_EMAIL, new String[] { "cskh.shoppingsquare@gmail.com" });
+                    intent.putExtra(Intent.EXTRA_EMAIL, new String[] { "kundenservice@giaohang.eu" });
                     String noidungtinnhan = "Họ và tên: " + ten + "\nEmail: " + email + "\nSố điện thoại: " + sdt + "\nĐịa chỉ: " + diachi + "\n" + "Danh sách sản phẩm mua: \n";
 
 
                     double tongtien = 0;
-                    DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
+                    DecimalFormat formatter = new DecimalFormat("#,###,###.0");
                     for (int i = 0; i < mDatHangs.size(); i++) {
                         noidungtinnhan += mDatHangs.get(i).getTenSanPham();
                         noidungtinnhan += "   x" + mDatHangs.get(i).getSoLuong();
-                        noidungtinnhan += "         " + decimalFormat.format(mDatHangs.get(i).getGiaSanPham() / mDatHangs.get(i).getSoLuong()) + " Đ" + "\n";
+                        noidungtinnhan += "         €" + formatter.format(mDatHangs.get(i).getGiaSanPham() / mDatHangs.get(i).getSoLuong())  + "\n";
                         tongtien += mDatHangs.get(i).getGiaSanPham();
                         tongTienDonHang += tongtien;
 
                     }
-                    noidungtinnhan += ("\nTổng tiền: " + decimalFormat.format(tongtien) + " Đ");
+                    noidungtinnhan += ("\nTổng tiền: €" + tongtien);
                     intent.putExtra(Intent.EXTRA_TEXT, noidungtinnhan);
 
                     if (intent.resolveActivity(getPackageManager()) != null) {
@@ -143,19 +179,71 @@ public class DatHangActivity extends AppCompatActivity {
                         startActivity(intent);
 
                     }
+*/
 
+/*
                 } else {
                     Toast.makeText(DatHangActivity.this, "Thông tin cá nhân còn thiếu hoặc địa chỉ email chưa đúng", Toast.LENGTH_SHORT).show();
 
                 }
+*/
             }
         });
 
 
     }
 
-    public static boolean isValidEmail(String email) {
-        return (!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches());
+
+    private void processPayment() {
+        PayPalPayment payPalPayment = new PayPalPayment(new BigDecimal(String.valueOf(tongTienDonHang)),"EUR", "Thanh toan App Chau A", PayPalPayment.PAYMENT_INTENT_SALE );
+        Intent intent = new Intent(this, PaymentActivity.class);
+        intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, config);
+        intent.putExtra(PaymentActivity.EXTRA_PAYMENT, payPalPayment);
+        startActivityForResult(intent, PAYPAL_REQUEST_CODE);
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode == PAYPAL_REQUEST_CODE){
+            if (resultCode == RESULT_OK) {
+                PaymentConfirmation confirmation = data.getParcelableExtra(PaymentActivity.EXTRA_RESULT_CONFIRMATION);
+                if (confirmation != null){
+                    try {
+                        String paymentDetails = confirmation.toJSONObject().toString(4);
+
+                        startActivity(new Intent(this, PaymentDetails.class)
+                                .putExtra("PaymentDetails", paymentDetails)
+                                .putExtra("PaymentAmount", String.valueOf(tongTienDonHang))
+                        );
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    for (int i = 0; i < mDatHangs.size(); i++) {
+
+                        final int finalI = i;
+                        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+                            @Override
+                            public void run() {
+                                mDb.gioHangDao().deleteGioHang(mDatHangs.get(finalI));
+                            }
+
+                        });
+                    }
+                    tongTienDonHang = 0;
+
+                }
+            }
+            else if (resultCode == Activity.RESULT_CANCELED)
+                Toast.makeText(DatHangActivity.this, "Cancel", Toast.LENGTH_SHORT).show();
+
+        }else if (requestCode == PaymentActivity.RESULT_EXTRAS_INVALID){
+            Toast.makeText(DatHangActivity.this, "Invalid", Toast.LENGTH_SHORT).show();
+
+        }
+
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
 }

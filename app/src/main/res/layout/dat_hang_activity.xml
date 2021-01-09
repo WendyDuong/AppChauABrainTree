@@ -113,22 +113,23 @@
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:layout_marginBottom="5dp"
-            android:text="Tiếp tục mua hàng"
+            android:text="Mua tiếp"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"/>
+            android:layout_width="0dp"/>
+
         <Button
+            android:id="@+id/dat_hang_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:id="@+id/dat_hang_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
-            android:gravity="center"
-            android:text="Gửi email đặt hàng"
             android:layout_marginBottom="5dp"
             android:layout_weight="1"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:text="Thanh toán"
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
 

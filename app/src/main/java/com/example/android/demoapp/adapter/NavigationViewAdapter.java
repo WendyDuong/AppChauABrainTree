@@ -8,13 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.android.demoapp.activity.GiaoHang;
+import com.example.android.demoapp.activity.VanChuyen;
 import com.example.android.demoapp.R;
-import com.example.android.demoapp.activity.DatHangHoActivity;
 import com.example.android.demoapp.activity.LienHe;
 import com.example.android.demoapp.activity.ThanhToan;
 
@@ -72,14 +70,10 @@ public class NavigationViewAdapter extends RecyclerView.Adapter<NavigationViewAd
                             context.startActivity(intentThanhToan);
                             break;
                         case 1:
-                            Intent intentGiaoHang = new Intent(context, GiaoHang.class);
+                            Intent intentGiaoHang = new Intent(context, VanChuyen.class);
                             context.startActivity(intentGiaoHang);
                             break;
                         case 2:
-                            Intent intentDoiTra = new Intent(context, DatHangHoActivity.class);
-                            context.startActivity(intentDoiTra);
-                            break;
-                        case 3:
                             Intent intentLienHe = new Intent(context, LienHe.class);
                             context.startActivity(intentLienHe);
                             break;
@@ -89,4 +83,3 @@ public class NavigationViewAdapter extends RecyclerView.Adapter<NavigationViewAd
         }
     }
 }
-

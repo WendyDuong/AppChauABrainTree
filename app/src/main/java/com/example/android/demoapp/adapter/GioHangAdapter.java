@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
@@ -49,10 +51,11 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.viewHold
         int idsanpham = gioHangEntry.getIdSanPham();
         double giasanpham = gioHangEntry.getGiaSanPham();
 
+        DecimalFormat formatter = new DecimalFormat("#,###,###.0");
+
         holder.textViewTenItem.setText(tensanpham);
         holder.textViewKhoiLuongItem.setText(khoiluongsanpham);
-        DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
-        holder.textViewGiaItem.setText(decimalFormat.format(giasanpham) + " Đ");
+        holder.textViewGiaItem.setText("€"+formatter.format(giasanpham));
         holder.imageViewITem.setImageResource(hinhanhsanpham);
         holder.textViewSoLuongItem.setText(soluongsanpham + "");
         holder.itemView.setTag(idsanpham);

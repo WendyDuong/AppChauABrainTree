@@ -57,9 +57,8 @@ public class CatalogAdapter extends RecyclerView.Adapter<CatalogAdapter.itemHold
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
         double giasp = sanPham.getGiaSanPham();
 
-        //Rounding curency to make a easy reading
-        giasp = Precision.round(giasp/1000, 0)*1000;
-        holder.tvGiasanpham.setText(decimalFormat.format(giasp) + " Đ");
+        //holder.tvGiasanpham.setText(decimalFormat.format(giasp) + " ");
+        holder.tvGiasanpham.setText("€"+giasp);
         holder.imgHinhAnhSanpham.setImageResource(sanPham.getHinhAnh());
         final int idsanpham = sanPham.getId();
 
@@ -171,6 +170,7 @@ public class CatalogAdapter extends RecyclerView.Adapter<CatalogAdapter.itemHold
 
     public void setYeuThichs(List<YeuThichEntry> yeuThichEntries){
         this.mYeuThichEntries = yeuThichEntries;
+        notifyDataSetChanged();
 
     }
 

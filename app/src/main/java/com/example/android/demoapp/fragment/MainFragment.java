@@ -25,15 +25,10 @@ public class MainFragment extends Fragment {
     ViewFlipper viewFlipper;
     RecyclerView recyclerViewMain;
     public static final List<Integer> ImageList = new ArrayList<Integer>() {{
-        add(R.drawable.logo_wmf);
-        add(R.drawable.logo_silit);
-        add(R.drawable.muller);
-        add(R.drawable.logo_dm);
-        add(R.drawable.apotheke_logo);
-        add(R.drawable.logo_saturn);
-        add(R.drawable.rossmann_logo);
-        add(R.drawable.worldofsweet);
-        add(R.drawable.mediamarkt_logo);
+        add(R.drawable.doankho_logo);
+        add(R.drawable.dodonglanh_logo);
+        add(R.drawable.raucu_logo);
+        add(R.drawable.gaogiavi_logo);
     }};
 
     public MainFragment() {
@@ -53,7 +48,7 @@ public class MainFragment extends Fragment {
         actionViewFlipper();
         MainAdapter mainAdapter = new MainAdapter(getActivity(), ImageList);
         recyclerViewMain.setHasFixedSize(true);
-        recyclerViewMain.setLayoutManager(new GridLayoutManager(getActivity(),3));
+        recyclerViewMain.setLayoutManager(new GridLayoutManager(getActivity(),2));
         recyclerViewMain.setAdapter(mainAdapter);
 
 
