@@ -45,7 +45,7 @@
 
     <!-- Subtitle text for the empty view that prompts the user to add a pet [CHAR LIMIT=50] -->
     <string name="them_vao_gio_hang">Thêm vào giỏ hàng</string>
-    <string name="xacNhanThanhToan">Qúy khách đã thanh toán thành công! \nThư xác nhận đặt hàng sẽ được gửi vào email của quý khách.</string>
+    <string name="xacNhanThanhToan">Quý khách đã thanh toán thành công! \nThư xác nhận đặt hàng sẽ được gửi vào email của quý khách.</string>
 
 
 </resources>

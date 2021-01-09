@@ -135,10 +135,12 @@ public class DatHangActivity extends AppCompatActivity {
                 final String email = editTextEmail.getText().toString().trim();
                 final String diachi = editTextDiaChi.getText().toString().trim();
 
-                processPayment();
+
+                if (ten.length() > 0 && sdt.length() > 0 && email.length() > 0 && diachi.length() > 0 && isValidEmail(email)) {
+
+                    processPayment();
 
 /*
-                //if (ten.length() > 0 && sdt.length() > 0 && email.length() > 0 && diachi.length() > 0 && isValidEmail(email)) {
                     Intent intent = new Intent(Intent.ACTION_SENDTO);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     intent.setData(Uri.parse("mailto:"));
@@ -180,13 +182,11 @@ public class DatHangActivity extends AppCompatActivity {
 
                     }
 */
-
-/*
                 } else {
                     Toast.makeText(DatHangActivity.this, "Thông tin cá nhân còn thiếu hoặc địa chỉ email chưa đúng", Toast.LENGTH_SHORT).show();
 
                 }
-*/
+
             }
         });
 

@@ -6,12 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".activity.PaymentDetails">
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:orientation="vertical">
 
         <TextView
+            android:textStyle="bold"
+
             android:id="@+id/txtConfirm"
             android:text="@string/xacNhanThanhToan"
             android:layout_width="match_parent"
@@ -25,7 +27,6 @@
         <TextView
             android:id="@+id/txtId"
             android:textSize="16sp"
-            android:textStyle="bold"
             android:text="Mã chuyển khoản: "
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
@@ -35,7 +36,6 @@
 
         <TextView
             android:id="@+id/txtAmount"
-            android:textStyle="bold"
             android:text="Đã chuyển khoản: "
             android:textSize="16sp"
             android:paddingStart="10dp"
@@ -46,7 +46,6 @@
 
         <TextView
             android:id="@+id/txtStatus"
-            android:textStyle="bold"
             android:text="Tình trạng thanh toán: "
             android:textSize="16sp"
             android:paddingStart="10dp"
@@ -57,7 +56,7 @@
 
 
         <TextView
-            android:text="Nhấn quay lại trang chủ để khám phá thêm nhiều sản phẩm của UngDungChauA"
+            android:text="Nhấn quay lại trang chủ để khám phá thêm nhiều sản phẩm của AppChauA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="18sp"
@@ -69,9 +68,12 @@
 
         <Button
             android:id="@+id/btnHome"
+            android:textColor="@color/colorWhite"
             android:layout_marginTop="24dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="8dp"
             android:text="Quay lại trang chủ"
             android:onClick="BackToHome"
             android:background="@color/colorAccent"
